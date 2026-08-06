@@ -24,6 +24,7 @@ export default function NotesClient() {
     queryKey: ["notes", page, search],
     queryFn: () => fetchNotes({ page, perPage: 12, search }),
     placeholderData: keepPreviousData,
+    refetchOnMount: false,
   });
   return (
     <main className={css.app}>

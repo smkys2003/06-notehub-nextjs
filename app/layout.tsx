@@ -9,7 +9,11 @@ export const metadata: Metadata = {
   description: "Create, find, and manage your notes.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>

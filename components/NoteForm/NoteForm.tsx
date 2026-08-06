@@ -6,6 +6,10 @@ import * as Yup from "yup";
 import { createNote } from "@/lib/api";
 import css from "./NoteForm.module.css";
 
+export interface NoteFormProps {
+  onCancel: () => void;
+}
+
 const schema = Yup.object({
   title: Yup.string()
     .min(3, "Minimum 3 characters")
@@ -58,11 +62,11 @@ export default function NoteForm({ onCancel }: { onCancel: () => void }) {
           <div className={css.formGroup}>
             <label htmlFor="tag">Tag</label>
             <Field as="select" className={css.select} id="tag" name="tag">
-              <option>Todo</option>
-              <option>Work</option>
-              <option>Personal</option>
-              <option>Meeting</option>
-              <option>Shopping</option>
+              <option value="Todo">Todo</option>
+              <option value="Work">Work</option>
+              <option value="Personal">Personal</option>
+              <option value="Meeting">Meeting</option>
+              <option value="Shopping">Shopping</option>
             </Field>
           </div>
           <div className={css.actions}>
