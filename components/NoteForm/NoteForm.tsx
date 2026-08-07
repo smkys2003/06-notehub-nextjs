@@ -22,7 +22,7 @@ const schema = Yup.object({
 });
 const initialValues = { title: "", content: "", tag: "Todo" as const };
 
-export default function NoteForm({ onCancel }: { onCancel: () => void }) {
+export default function NoteForm({ onCancel }: NoteFormProps) {
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: createNote,
